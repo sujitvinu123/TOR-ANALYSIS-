@@ -1,0 +1,71 @@
+================================================================================
+  CYBERSECURITY DASHBOARD - TOR BROWSER SETUP INSTRUCTIONS
+================================================================================
+
+STEP 1: INSTALL TOR BROWSER
+---------------------------
+1. Go to: https://www.torproject.org/download/
+2. Download "Tor Browser" for Windows
+3. Run the installer
+4. Install it (just click Next, Next, Install)
+
+STEP 2: START TOR BROWSER
+-------------------------
+1. Open Tor Browser from Start Menu
+2. Wait for connection (you'll see "Connected to the Tor network")
+3. IMPORTANT: Keep Tor Browser open! (You can minimize it)
+
+STEP 3: VERIFY CONNECTION
+--------------------------
+Open PowerShell in your project folder and run:
+
+    npm run check-tor
+
+You should see: ✅ Tor SOCKS proxy is running on port 9050!
+
+If you see an error, make sure Tor Browser is running and connected.
+
+STEP 4: START THE DASHBOARD
+----------------------------
+In PowerShell, run:
+
+    npm run dev
+
+Then open your browser and go to:
+
+    http://localhost:3000
+
+The dashboard will automatically connect to Tor!
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Problem: "Connection refused" or "Connection failed"
+Solution: 
+  - Make sure Tor Browser is running
+  - Check that Tor Browser shows "Connected to the Tor network"
+  - Try closing and reopening Tor Browser
+
+Problem: Dashboard shows "Connecting..." forever
+Solution:
+  - Check if Tor Browser is still running
+  - Press F12 in browser to see errors
+  - Run: npm run check-tor
+
+Problem: Port 3000 already in use
+Solution:
+  - Close other applications using port 3000
+  - Or the dashboard will use a different port automatically
+
+================================================================================
+IMPORTANT NOTES
+================================================================================
+
+✓ Tor Browser MUST stay open while using the dashboard
+✓ The dashboard connects through Tor Browser automatically
+✓ Data updates every 10 seconds
+✓ All network scans go through Tor network
+
+================================================================================
+
